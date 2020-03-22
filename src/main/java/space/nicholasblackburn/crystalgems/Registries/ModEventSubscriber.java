@@ -16,30 +16,23 @@ public final class ModEventSubscriber{
     
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
-
-        event.getRegistry().registerAll(
-    setup(new Item(new Item.Properties()), "4")
-    
-    
-);
-
-
-}
+        Main.Logger.warn("RegisterItems", true);
+        setup(new Item(new Item.Properties()), "example_item");
+    }
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event) {    
-
-}
-
-public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
-	return setup(entry, new ResourceLocation(Main.MODID, name));
-}
-
-public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final ResourceLocation registryName) {
-	entry.setRegistryName(registryName);
-	return entry;
-}
+        Main.Logger.warn("RegisterBlocks", true);
 
 
+    }
 
+    public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
+        return setup(entry, new ResourceLocation(Main.MODID, name));
+        }
+    
+    public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final ResourceLocation registryName) {
+        entry.setRegistryName(registryName);
+        return entry;
+        }
 }
 
